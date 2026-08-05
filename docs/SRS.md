@@ -1,216 +1,146 @@
-# Software Requirements Specification (SRS)
+# Software Requirements
 
-# اسم المشروع
+## 1. Problem Understanding
 
-## نظام إدارة الاجتماعات والقرارات المؤسسية
+Many organizations and teams conduct meetings frequently, but they face difficulties in organizing meeting information, recording decisions, assigning tasks, and tracking task progress.
 
-## Meeting & Decision Management System
+Meeting details may be stored in different places, which can cause loss of information, difficulty in following up on decisions, and delays in completing assigned tasks.
 
----
-
-# 1. وصف المشكلة
-
-تعاني العديد من المؤسسات والفرق من صعوبة تنظيم الاجتماعات ومتابعة القرارات الناتجة عنها، حيث يتم حفظ محاضر الاجتماعات والمهام في ملفات أو وسائل مختلفة مما يؤدي إلى فقدان بعض المعلومات، وصعوبة معرفة حالة تنفيذ القرارات، وتأخر متابعة المهام والمسؤوليات.
-
-يهدف المشروع إلى توفير نظام مركزي يساعد على إدارة الاجتماعات، حفظ المحاضر، تسجيل القرارات، وإنشاء ومتابعة المهام المرتبطة بها بطريقة منظمة.
+The system aims to provide a centralized platform for managing meetings, decisions, and related tasks.
 
 ---
 
-# 2. الحل المقترح
+# 2. Functional Requirements (FR)
 
-تطوير تطبيق ويب يسمح للمستخدمين بإدارة الاجتماعات بشكل إلكتروني من خلال إنشاء الاجتماعات، إضافة المشاركين، تسجيل محاضر الاجتماعات، إضافة القرارات، وتحويل القرارات إلى مهام مع تحديد المسؤول والموعد النهائي وحالة التنفيذ.
+## FR-01: User Registration
 
-يوفر النظام لوحة متابعة تساعد المسؤولين على معرفة حالة الاجتماعات والمهام والقرارات.
+The system shall allow users to create a new account.
 
----
+## FR-02: User Login
 
-# 3. المستخدمون المستهدفون
+The system shall allow registered users to log in using their username/email and password.
 
-المستخدمون الرئيسيون للنظام هم:
+## FR-03: User Management
 
-* مدير النظام (Administrator).
-* رئيس الاجتماع.
-* مقرر الاجتماع.
-* أعضاء الفريق المشاركون في الاجتماعات.
+The administrator shall be able to manage users and their roles.
 
----
+## FR-04: Create Meeting
 
-# 4. نطاق المشروع
+The user shall be able to create a new meeting with:
 
-يشمل النظام الوظائف التالية:
+* Meeting title.
+* Date and time.
+* Location.
+* Description.
 
-* إنشاء حسابات المستخدمين.
-* تسجيل الدخول والخروج.
-* إدارة صلاحيات المستخدمين.
-* إنشاء اجتماع جديد.
-* تعديل بيانات الاجتماع.
-* حذف الاجتماع.
-* إضافة المشاركين إلى الاجتماع.
-* تحديد دور كل مشارك.
-* كتابة محضر الاجتماع.
-* إضافة القرارات الناتجة عن الاجتماع.
-* إنشاء مهام مرتبطة بالقرارات.
-* تحديد المسؤول عن تنفيذ المهمة.
-* تحديد الموعد النهائي للمهمة.
-* تحديث حالة المهمة:
+## FR-05: Update Meeting Information
 
-  * قيد التنفيذ.
-  * مكتملة.
-  * متأخرة.
-* عرض تقارير عن الاجتماعات والمهام.
+The user shall be able to modify meeting details.
 
----
+## FR-06: Add Meeting Participants
 
-# 5. خارج نطاق المشروع
+The user shall be able to add participants to a meeting and define their roles.
 
-لن يتم تنفيذ الوظائف التالية في النسخة الحالية:
+## FR-07: Record Meeting Minutes
 
-* تحويل الصوت إلى نص تلقائيًا.
-* تحليل الاجتماعات باستخدام الذكاء الاصطناعي.
-* استخراج القرارات بشكل تلقائي.
-* تحليل المشاعر أو محتوى الاجتماع.
-* الاجتماعات المرئية المباشرة.
-* المحادثات الفورية.
-* التكامل مع أنظمة المؤسسات الخارجية.
+The system shall allow the user to write and save meeting minutes.
 
----
+## FR-08: Add Decisions
 
-# 6. المتطلبات الوظيفية (Functional Requirements)
+The user shall be able to add decisions related to a specific meeting.
 
-## FR-01:
+## FR-09: Create Tasks
 
-يجب أن يتمكن المستخدم من إنشاء حساب جديد.
+The user shall be able to create tasks based on meeting decisions.
 
-## FR-02:
+## FR-10: Assign Tasks
 
-يجب أن يتمكن المستخدم من تسجيل الدخول إلى النظام.
+The user shall be able to assign tasks to specific users.
 
-## FR-03:
+## FR-11: Track Task Status
 
-يجب أن يتمكن مدير النظام من إدارة المستخدمين والصلاحيات.
+The system shall allow users to update task status:
 
-## FR-04:
+* Pending.
+* In Progress.
+* Completed.
+* Delayed.
 
-يجب أن يتمكن المستخدم من إنشاء اجتماع جديد وإدخال بياناته.
+## FR-12: Generate Reports
 
-## FR-05:
-
-يجب أن يتمكن المستخدم من تعديل بيانات الاجتماع.
-
-## FR-06:
-
-يجب أن يتمكن المستخدم من إضافة المشاركين إلى الاجتماع.
-
-## FR-07:
-
-يجب أن يتمكن المستخدم من تسجيل محضر الاجتماع.
-
-## FR-08:
-
-يجب أن يتمكن المستخدم من إضافة قرار مرتبط باجتماع معين.
-
-## FR-09:
-
-يجب أن يتمكن المستخدم من إنشاء مهمة مرتبطة بقرار.
-
-## FR-10:
-
-يجب أن يتمكن المستخدم من تحديد المسؤول والموعد النهائي للمهمة.
-
-## FR-11:
-
-يجب أن يتمكن المستخدم من تحديث حالة المهمة.
-
-## FR-12:
-
-يجب أن يتمكن المستخدم من عرض تقارير الاجتماعات والمهام.
+The system shall allow users to view and generate reports about meetings, decisions, and tasks.
 
 ---
 
-# 7. المتطلبات غير الوظيفية (Non-Functional Requirements)
+# 3. Non-Functional Requirements (NFR)
 
-## NFR-01:
+## NFR-01: Security
 
-يجب حماية كلمات المرور باستخدام خوارزمية تجزئة آمنة.
+The system shall protect user passwords using secure hashing techniques.
 
-## NFR-02:
+## NFR-02: Performance
 
-يجب أن يكون النظام سهل الاستخدام وذو واجهة واضحة.
+The system should provide fast response time during normal usage.
 
-## NFR-03:
+## NFR-03: Usability
 
-يجب أن يدعم النظام صلاحيات مختلفة للمستخدمين حسب أدوارهم.
+The system interface should be simple and easy to use.
 
-## NFR-04:
+## NFR-04: Reliability
 
-يجب أن يحافظ النظام على سرية بيانات المستخدمين والاجتماعات.
+The system should maintain data consistency and prevent data loss.
 
-## NFR-05:
+## NFR-05: Authorization
 
-يجب أن تكون قاعدة البيانات منظمة وقابلة للتوسع.
+Users shall only access features and data according to their permissions.
 
-## NFR-06:
+## NFR-06: Scalability
 
-يجب أن يكون وقت استجابة النظام مناسبًا في الاستخدام الطبيعي.
-
----
-
-# 8. القيود والافتراضات
-
-## القيود:
-
-* سيتم تطوير النظام كتطبيق ويب.
-* يعتمد النظام على وجود اتصال بالشبكة.
-* مدة تنفيذ المشروع محدودة بالفصل الدراسي.
-* سيتم استخدام تقنيات مناسبة لمادة الخادم والعميل.
-
-## الافتراضات:
-
-* المستخدمون لديهم حسابات صحيحة للدخول للنظام.
-* المستخدمون يدخلون بيانات الاجتماعات والقرارات بشكل صحيح.
-* قاعدة البيانات متوفرة أثناء تشغيل النظام.
+The system database and architecture should support future expansion.
 
 ---
 
-# 9. حالات الحافة والمخاطر الأولية
+# 4. User Requirements
 
-## حالات الحافة:
+## Administrator:
 
-* محاولة تسجيل الدخول باستخدام بيانات غير صحيحة.
-* إنشاء اجتماع بدون عنوان.
-* إضافة مهمة بدون مسؤول.
-* إدخال تاريخ انتهاء قبل تاريخ إنشاء المهمة.
-* حذف اجتماع مرتبط بقرارات أو مهام.
+* Manage users.
+* Manage permissions.
+* Monitor system activities.
 
-## المخاطر الأولية:
+## Meeting Manager:
 
-* تأخر تنفيذ بعض وظائف النظام بسبب ضيق الوقت.
-* حدوث أخطاء في ربط الواجهة الأمامية مع الخادم.
-* مشاكل في تصميم قاعدة البيانات.
-* فقدان البيانات في حالة عدم وجود نسخ احتياطية.
+* Create meetings.
+* Add participants.
+* Record minutes.
+* Add decisions.
 
----
+## Team Member:
 
-# التقنيات المقترحة
-
-## Frontend:
-
-React أو HTML/CSS/JavaScript
-
-## Backend:
-
-FastAPI أو Node.js
-
-## Database:
-
-PostgreSQL أو MySQL
-
-## Communication:
-
-REST API
+* View assigned tasks.
+* Update task status.
+* Follow meeting decisions.
 
 ---
 
-# الهدف النهائي للمشروع
+# 5. System Constraints
 
-إنشاء نظام ويب يساعد المؤسسات والفرق على تنظيم الاجتماعات وإدارة القرارات ومتابعة تنفيذ المهام بطريقة سهلة ومنظمة.
+* The system will be developed as a web application.
+* The project duration is limited to the academic semester.
+* The system depends on a database server.
+* The system will use REST API communication between client and server.
+
+---
+
+# 6. Assumptions
+
+* Users have valid accounts.
+* Users enter correct meeting information.
+* The database server is available during system operation.
+* Users have internet/network access.
+
+---
+
+# 7. Main Project Goal
+
+The goal of this project is to develop a web-based system that helps organizations manage meetings, record decisions, assign tasks, and monitor task completion in an organized and efficient way.
